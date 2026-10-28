@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carrito de la compra — Lockia</title>
+  <meta name="description" content="Revise los pedidos de taquillas inteligentes configuradas en su carrito de compra de Lockia.">
+
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Estilos -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- =========================================================================
+       CABECERA FIJA Y NAVEGACIÓN
+       ========================================================================= -->
+  <header class="fixed-header">
+    <div class="header-inner">
+      <a href="index.html" class="brand-logo" title="Lockia - Ir a Inicio">
+        <img src="assets/logo.svg" alt="Lockia Taquillas Inteligentes Logo">
+      </a>
+
+      <nav class="main-nav">
+        <!-- 1. Inicio -->
+        <div class="nav-item">
+          <a href="index.html" class="nav-link">
+            <span>Inicio</span>
+            <span class="dropdown-arrow">▼</span>
+          </a>
+          <div class="dropdown-menu">
+            <a href="index.html#sobre-nosotros" class="dropdown-link">Sobre nosotros</a>
+            <a href="index.html#nuestro-producto" class="dropdown-link">Nuestro producto</a>
+            <a href="index.html#por-que-comprarnos" class="dropdown-link">¿Por qué comprarnos?</a>
+            <a href="index.html#contacto" class="dropdown-link">Contactos</a>
+          </div>
+        </div>
+
+        <!-- 2. Tienda -->
+        <div class="nav-item">
+          <a href="tienda.html" class="nav-link">
+            <span>Tienda</span>
+            <span class="dropdown-arrow">▼</span>
+          </a>
+          <div class="dropdown-menu">
+            <a href="taquillas.html" class="dropdown-link">Taquillas</a>
+            <a href="mantenimiento.html" class="dropdown-link">Mantenimiento</a>
+          </div>
+        </div>
+
+        <!-- 3. Preguntas frecuentes -->
+        <div class="nav-item">
+          <a href="faq.html" class="nav-link">Preguntas frecuentes</a>
+        </div>
+
+        <!-- 4. Carrito (Activo, icono de cesta) -->
+        <div class="nav-item">
+          <a href="carrito.html" class="nav-link active" aria-label="Carrito" title="Carrito">
+            <svg class="cart-basket-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="m3 9 2.5 11.5a1.5 1.5 0 0 0 1.5 1.2h10a1.5 1.5 0 0 0 1.5-1.2L21 9H3z"/>
+              <path d="M8 9V6a4 4 0 0 1 8 0v3"/>
+              <line x1="9" y1="13" x2="9" y2="17"/>
+              <line x1="12" y1="13" x2="12" y2="17"/>
+              <line x1="15" y1="13" x2="15" y2="17"/>
+            </svg>
+            <span class="cart-count-badge">0</span>
+          </a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Fondo ambiental decorativo -->
+  <div class="ambient-glow-wrapper">
+    <div class="ambient-orb orb-cyan" style="top: 10%; left: 8%;"></div>
+    <div class="ambient-orb orb-teal" style="bottom: 15%; right: 10%;"></div>
+  </div>
+
+  <!-- =========================================================================
+       PÁGINA 6: CARRITO DE COMPRA
+       ========================================================================= -->
+  <main class="page-container" style="position: relative; z-index: 1;">
+
+    <div class="page-title-header">
+      <span class="section-pill-tag">Revisión de Pedido</span>
+      <p class="page-subtitle">Modelos de taquillas personalizadas seleccionados para su instalación</p>
+    </div>
+
+    <!-- Cinta de confianza y garantías -->
+    <div class="trust-ribbon">
+      <div class="trust-item">
+        <span class="trust-item-icon">🛡️</span>
+        <span>Garantía Oficial de 3 Años</span>
+      </div>
+      <div class="trust-item">
+        <span class="trust-item-icon">📦</span>
+        <span>Envío Especializado</span>
+      </div>
+      <div class="trust-item">
+        <span class="trust-item-icon">🛠️</span>
+        <span>Asistencia de Montaje Certificada</span>
+      </div>
+    </div>
+
+    <!-- Mensaje cuando el carrito está vacío: "No hay productos" centrado -->
+    <div id="cartEmptyMessage" class="cart-empty-message" style="display: none;">
+      <div style="font-size: 3.5rem; margin-bottom: 1rem; opacity: 0.4;">📦</div>
+      <div>No hay productos</div>
+      <p style="font-size: 1rem; color: var(--text-light); font-weight: normal; margin-top: 0.5rem;">
+        No has añadido ninguna configuración de taquillas todavía.
+      </p>
+      <a href="taquillas.html" class="btn-buy-action" style="display: inline-flex; margin-top: 1.5rem; font-size: 1rem; padding: 0.75rem 1.75rem;">
+        Ir a configurar taquillas →
+      </a>
+    </div>
+
+    <!-- Contenedor de la tabla de taquillas (se muestra si hay productos) -->
+    <div id="cartTableContainer" class="cart-table-wrapper" style="display: none;">
+      <table class="cart-table">
+        <thead>
+          <tr>
+            <th style="width: 48px;"></th>
+            <th>Color</th>
+            <th>Nº de huecos</th>
+            <th>Cantidad</th>
+            <th>Distribución</th>
+          </tr>
+        </thead>
+        <tbody id="cartTableBody">
+          <!-- Filas generadas dinámicamente por cart-page.js -->
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Resumen y tramitación del pedido -->
+    <div id="cartSummaryWrapper" class="cart-summary-card" style="display: none;">
+      <div class="cart-summary-line">
+        <span>Total de huecos contratados:</span>
+        <strong id="totalHuecosSpan">0</strong>
+      </div>
+      <div class="cart-summary-line">
+        <span>Instalaciones totales:</span>
+        <strong id="totalInstallationsSpan">0</strong>
+      </div>
+      <!-- Botón Pagar que lleva a la nueva página de checkout y facturación -->
+      <a href="checkout.html" class="btn-checkout-action" id="btnCartProceedPay" style="display: block; text-align: center; text-decoration: none;">
+        Pagar
+      </a>
+      <div style="text-align: center; margin-top: 0.75rem;">
+        <a href="taquillas.html" style="font-size: 0.85rem; color: var(--text-muted); text-decoration: underline;">
+          + Configurar otra instalación
+        </a>
+      </div>
+    </div>
+
+  </main>
+
+  <script src="js/cart.js"></script>
+  <script src="js/cart-page.js"></script>
+</body>
+</html>
