@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Preguntas Frecuentes — Lockia</title>
+  <meta name="description" content="Respuestas a las dudas más comunes sobre el uso, la seguridad, la instalación y las características de las taquillas inteligentes Lockia.">
+
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Estilos -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- =========================================================================
+       CABECERA FIJA Y NAVEGACIÓN
+       ========================================================================= -->
+  <header class="fixed-header">
+    <div class="header-inner">
+      <a href="index.html" class="brand-logo" title="Lockia - Ir a Inicio">
+        <img src="assets/logo.svg" alt="Lockia Taquillas Inteligentes Logo">
+      </a>
+
+      <nav class="main-nav">
+        <!-- 1. Inicio -->
+        <div class="nav-item">
+          <a href="index.html" class="nav-link">
+            <span>Inicio</span>
+            <span class="dropdown-arrow">▼</span>
+          </a>
+          <div class="dropdown-menu">
+            <a href="index.html#sobre-nosotros" class="dropdown-link">Sobre nosotros</a>
+            <a href="index.html#nuestro-producto" class="dropdown-link">Nuestro producto</a>
+            <a href="index.html#por-que-comprarnos" class="dropdown-link">¿Por qué comprarnos?</a>
+            <a href="index.html#contacto" class="dropdown-link">Contactos</a>
+          </div>
+        </div>
+
+        <!-- 2. Tienda -->
+        <div class="nav-item">
+          <a href="tienda.html" class="nav-link">
+            <span>Tienda</span>
+            <span class="dropdown-arrow">▼</span>
+          </a>
+          <div class="dropdown-menu">
+            <a href="taquillas.html" class="dropdown-link">Taquillas</a>
+            <a href="mantenimiento.html" class="dropdown-link">Mantenimiento</a>
+          </div>
+        </div>
+
+        <!-- 3. Preguntas frecuentes (Activa) -->
+        <div class="nav-item">
+          <a href="faq.html" class="nav-link active">
+            <span>Preguntas frecuentes</span>
+          </a>
+        </div>
+
+        <!-- 4. Carrito (icono de cesta) -->
+        <div class="nav-item">
+          <a href="carrito.html" class="nav-link" aria-label="Carrito" title="Carrito">
+            <svg class="cart-basket-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="m3 9 2.5 11.5a1.5 1.5 0 0 0 1.5 1.2h10a1.5 1.5 0 0 0 1.5-1.2L21 9H3z"/>
+              <path d="M8 9V6a4 4 0 0 1 8 0v3"/>
+              <line x1="9" y1="13" x2="9" y2="17"/>
+              <line x1="12" y1="13" x2="12" y2="17"/>
+              <line x1="15" y1="13" x2="15" y2="17"/>
+            </svg>
+            <span class="cart-count-badge">0</span>
+          </a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Fondo ambiental decorativo -->
+  <div class="ambient-glow-wrapper">
+    <div class="ambient-orb orb-teal" style="top: 15%; right: 10%;"></div>
+    <div class="ambient-orb orb-cyan" style="bottom: 20%; left: 8%;"></div>
+  </div>
+
+  <!-- =========================================================================
+       PÁGINA 5: PREGUNTAS FRECUENTES (5 ACORDEONES)
+       ========================================================================= -->
+  <main class="page-container" style="position: relative; z-index: 1;">
+
+    <div class="page-title-header">
+      <span class="section-pill-tag">Centro de Respuestas</span>
+      <h1 class="page-title">Preguntas frecuentes</h1>
+      <p class="page-subtitle">Todo lo que necesitas saber sobre las taquillas inteligentes Lockia</p>
+    </div>
+
+    <div class="faq-accordion-container">
+
+      <!-- Pregunta 1 -->
+      <div class="faq-item">
+        <button type="button" class="faq-question-btn">
+          <span><span class="faq-category-tag">Tarjetas RFID</span> 1. ¿Cómo funciona el sistema de tarjetas para el personal responsable?</span>
+          <span class="faq-chevron">▼</span>
+        </button>
+        <div class="faq-answer-pane">
+          <p>
+            Las taquillas Lockia incluyen tarjetas maestras de proximidad con tecnología RFID y NFC codificadas de forma única. Estas tarjetas permiten a los docentes, personal de conserjería o coordinadores abrir cualquier taquilla al instante ante emergencias, olvidos de clave o revisiones de seguridad al término de la jornada lectiva o laboral.
+          </p>
+        </div>
+      </div>
+
+      <!-- Pregunta 2 -->
+      <div class="faq-item">
+        <button type="button" class="faq-question-btn">
+          <span><span class="faq-category-tag">Luces LED</span> 2. ¿Qué información proporcionan los indicadores LED inteligentes?</span>
+          <span class="faq-chevron">▼</span>
+        </button>
+        <div class="faq-answer-pane">
+          <p>
+            Cada compartimento cuenta con una guía lumínica LED inteligente de alta visibilidad: el color <strong>verde</strong> indica la disponibilidad para depositar un dispositivo, mientras que el color <strong>rojo</strong> indica que hay un dispositivo dentro del hueco custodiado.
+          </p>
+        </div>
+      </div>
+
+      <!-- Pregunta 3 -->
+      <div class="faq-item">
+        <button type="button" class="faq-question-btn">
+          <span><span class="faq-category-tag">Programación</span> 3. ¿En qué consiste el sistema de bloqueo temporizado?</span>
+          <span class="faq-chevron">▼</span>
+        </button>
+        <div class="faq-answer-pane">
+          <p>
+            El bloqueo temporizado permite a los administradores fijar franjas horarias automatizadas (por ejemplo, desde el inicio de las clases a las 8:30 h hasta el recreo o la salida). Durante esas horas, las compuertas permanecen firmemente cerradas e inaccesibles para los alumnos, garantizando la desconexión digital completa y evitando distracciones en clase.
+          </p>
+        </div>
+      </div>
+
+      <!-- Pregunta 4 -->
+      <div class="faq-item">
+        <button type="button" class="faq-question-btn">
+          <span><span class="faq-category-tag">Seguridad</span> 4. ¿Son las compuertas y taquillas seguras y resistentes a impactos?</span>
+          <span class="faq-chevron">▼</span>
+        </button>
+        <div class="faq-answer-pane">
+          <p>
+            Absolutamente. La estructura está íntegramente fabricada con <strong>chapa de acero</strong> reforzada y cada compuerta incorpora <strong>cristal de policarbonato</strong> de máxima resistencia a impactos y roturas. Esta combinación de chapa de acero de alta durabilidad y policarbonato de seguridad permite verificar visualmente el interior sin abrir la taquilla, garantizando una protección impenetrable y gran robustez ante cualquier golpe o intento de forzado.
+          </p>
+        </div>
+      </div>
+
+      <!-- Pregunta 5 -->
+      <div class="faq-item">
+        <button type="button" class="faq-question-btn">
+          <span><span class="faq-category-tag">Instalación</span> 5. ¿Qué requisitos de instalación y conexión eléctrica se necesitan?</span>
+          <span class="faq-chevron">▼</span>
+        </button>
+        <div class="faq-answer-pane">
+          <p>
+            Las instalaciones de Lockia son totalmente modulares y de tipo «Plug & Play». Solo precisan una toma de enchufe convencional de 230 V con toma de tierra. Los módulos se fijan fácilmente a cualquier tipo de pared mediante anclajes estructurales homologados y disponen de disyuntores térmicos que protegen los teléfonos contra cualquier fluctuación de corriente.
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <script src="js/cart.js"></script>
+  <script src="js/faq.js"></script>
+</body>
+</html>
